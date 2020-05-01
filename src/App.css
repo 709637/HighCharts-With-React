@@ -10,7 +10,7 @@
 .flexDisplay{
   display: flex;
   justify-content: space-between;
-  width: 36% !important;
+  width: 50% !important;
 }
 
 .dynamicGraph{
