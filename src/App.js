@@ -1,9 +1,9 @@
 import React, {lazy, Suspense, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MYFirstChart from './Components/MyFirstChart';
-import BarChart from './Components/BarChart';
-import PolarChart from './Components/PolarChart';
+import MYFirstChart from './Components/Charts/MyFirstChart';
+import BarChart from './Components/Charts/BarChart';
+import PolarChart from './Components/Charts/PolarChart';
 import Users from './Components/User';
 import About from './Components/About';
 import Home from './Components/Home';
@@ -11,7 +11,10 @@ import {BrowserRouter as router, Route, Switch, Link, Router} from "react-router
 import createBrowserHistory from 'history/createBrowserHistory'
 import Memohook from './Components/Memo';
 import ComingSoon from './Components/ModalWithTimer';
-import ScatterChart from './Components/ScatterChart';
+import ScatterChart from './Components/Charts/ScatterChart';
+import ParentComp from './Components/CommonFunctionality/HigherOrderComponent/ParentForCommonFuncDisp';
+import ParentComponent from './Components/CommonFunctionality/RenderProp/ParentForCommonFuncDisp';
+
 import ReactGA from 'react-ga';
 
 // function initializeReactGA() {
@@ -72,6 +75,12 @@ useEffect(()=>{
           <li>
             <Link to="/comingsoon">Modal</Link>
           </li>
+          <li>
+            <Link to="/CommomFunc">CommomFuncHigherOrder</Link>
+          </li>
+          <li>
+            <Link to="/ParentComponent">CommomFuncRenderProp</Link>
+          </li>
         </ul>
         <div  className="dynamicGraph">
         <Switch>
@@ -83,7 +92,9 @@ useEffect(()=>{
           <Route exact path="/barChart" component={BarChart}></Route>          
           <Route exact path="/scatterChart" component={ScatterChart}></Route>
           <Route exact path="/comingsoon" component={ComingSoon}></Route>
-          <Route exact path="/columnChart" component={MYFirstChart}></Route>
+          <Route exact path="/columnChart" component={MYFirstChart}></Route>          
+          <Route exact path="/CommomFunc" component={ParentComp}></Route>
+          <Route exact path="/ParentComponent" component={ParentComponent}></Route>
           <Route exact path="/lazyComp" render={props => ( <Suspense fallback={<div>Loading...</div>}>
             <LazyLoad {...props} />
             </Suspense>)}>
