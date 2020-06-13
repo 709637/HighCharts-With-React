@@ -1,6 +1,7 @@
 import React, {lazy, Suspense, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import MYFirstChart from './Components/Charts/MyFirstChart';
 import BarChart from './Components/Charts/BarChart';
 import PolarChart from './Components/Charts/PolarChart';
@@ -10,10 +11,11 @@ import Home from './Components/Home';
 import {BrowserRouter as router, Route, Switch, Link, Router} from "react-router-dom";
 import createBrowserHistory from 'history/createBrowserHistory'
 import Memohook from './Components/Memo';
-import ComingSoon from './Components/ModalWithTimer';
+import ReactPortalModal from './Components/ReactPortals/ModalWithReactPortal';
 import ScatterChart from './Components/Charts/ScatterChart';
 import ParentComp from './Components/CommonFunctionality/HigherOrderComponent/ParentForCommonFuncDisp';
 import ParentComponent from './Components/CommonFunctionality/RenderProp/ParentForCommonFuncDisp';
+import ComingSoonModal from './Components/ReactModalWithCountDownTimer/ModalCountDown';
 
 import ReactGA from 'react-ga';
 
@@ -73,13 +75,16 @@ useEffect(()=>{
             <Link to="/lazyComp">Lazy Component</Link>
           </li>
           <li>
-            <Link to="/comingsoon">Modal</Link>
+            <Link to="/ReactPortalModal">ReactPortalModal</Link>
           </li>
           <li>
             <Link to="/CommomFunc">CommomFuncHigherOrder</Link>
           </li>
           <li>
             <Link to="/ParentComponent">CommomFuncRenderProp</Link>
+          </li>          
+          <li>
+            <Link to="/ComingSoonModal">ComingSoonModal</Link>
           </li>
         </ul>
         <div  className="dynamicGraph">
@@ -91,10 +96,11 @@ useEffect(()=>{
           <Route exact path="/polarChart" component={PolarChart}></Route>
           <Route exact path="/barChart" component={BarChart}></Route>          
           <Route exact path="/scatterChart" component={ScatterChart}></Route>
-          <Route exact path="/comingsoon" component={ComingSoon}></Route>
+          <Route exact path="/ReactPortalModal" component={ReactPortalModal}></Route>
           <Route exact path="/columnChart" component={MYFirstChart}></Route>          
           <Route exact path="/CommomFunc" component={ParentComp}></Route>
-          <Route exact path="/ParentComponent" component={ParentComponent}></Route>
+          <Route exact path="/ParentComponent" component={ParentComponent}></Route>          
+          <Route exact path="/ComingSoonModal" component={ComingSoonModal}></Route>
           <Route exact path="/lazyComp" render={props => ( <Suspense fallback={<div>Loading...</div>}>
             <LazyLoad {...props} />
             </Suspense>)}>
