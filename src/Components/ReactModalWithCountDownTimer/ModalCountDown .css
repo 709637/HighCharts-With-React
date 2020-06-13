@@ -1,0 +1,114 @@
+.noPadding{
+	padding: 0px;
+}
+
+.Modalwrapper{
+	position: relative;
+	z-index: 2;
+}
+
+.Modallayout{
+	width:100%;
+	float:left;
+}
+
+.BodyPart{
+	height: auto;
+	position:static;
+	background:url(../images/bg-comming.jpg);
+	background-size:cover;
+}
+
+.MainC{
+    position:relative;
+}
+
+.paddingzero{
+    padding: 0 !important;
+}
+
+.Contents{
+	width: 100%;
+	float: left;
+}
+
+.BoxLayout{
+	max-width:1515px;
+	width:100%;
+	padding:30px 0px;
+	overflow:hidden;
+	background:#fff;
+}
+
+.CountDown{
+    padding:0 13px;
+}
+
+.CountDownBox{
+	width:50%;
+	float:left;
+	padding:2px;
+	text-align:center;
+}
+
+.CountDown .CountDownTimer{
+    padding:53px 0;
+}
+
+.CountDown .CountDownTimer h1{
+	color:#fff;
+	margin:0 0 15px;
+	font-size:60px;
+	line-height:45px;
+	font-weight:200;
+}
+.CountDown .CountDownTimer p{
+	margin:0;
+	color:#fff;
+	font-size:30px;
+	line-height:34px;
+	font-weight:200;
+	font-family: font44160;
+}
+
+.columns{
+	width:50%;
+	margin:0 -2px;
+	padding:0 15px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.ModalContents .icon{padding:0 0 60px;}
+.ModalContents .BorderStyle{
+	margin:0 0 30px;
+	padding:0 0 30px;
+}
+.ModalContents .BorderStyle h2{
+	margin:0 0 12px;
+	font-size:40px;
+	line-height:35px;
+}
+.ModalContents .BorderStyle h3{
+	margin:0;
+	clear:both;
+	font-size:18px;
+	line-height:20px;
+}
+.ModalContents .tg-themeform fieldset{
+	position:relative;
+	padding:0 190px 0 0;
+}
+.ModalContents .tg-themeform fieldset .form-group{margin:0;}
+.ModalContents .tg-themeform fieldset .tg-btn{
+	top: 0;
+	right: 0;
+	padding: 0;
+	width: 170px;
+	position: absolute;
+}
+
+.Description {
+	width: 100%;
+	float: left;
+}

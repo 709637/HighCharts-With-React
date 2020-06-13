@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
 
-const ComingSoon = (props) => {
+const ComingSoonModal = (props) => {
 
 	const inaugurationDate = new Date('May 23, 2020 21:25:00');
 
@@ -76,40 +76,31 @@ const ComingSoon = (props) => {
 				dialogClassName="modal90w">
 
 				<Modal.Header closeButton>
-					<Modal.Title>We’re Launching Soon</Modal.Title>
+					<Modal.Title>CountDownTimer</Modal.Title>
 				</Modal.Header>
 
-				<Modal.Body className="noPadding"><div id="tg-wrapper" className="tg-wrapper tg-haslayout">
-					<div className="tg-commingsoonpage">
-						<div id="tg-wrapper" className="tg-wrapper tg-haslayout">
-							<main id="tg-main" className="tg-main tg-paddingzero tg-haslayout">
-								<div className="tg-commingsoonholder">
-									<div className="tg-commingsoonbox">
-										<div id="tg-comming-sooncounter" className="tg-twocols tg-comming-sooncounter">
-											<div className="tg-counterbox">
-												<div id="days" className="timer_box"><p>Days</p><h1>{days}</h1></div>
+				<Modal.Body className="noPadding"><div id="Modalwrapper" className="Modalwrapper Modallayout">
+					<div className="BodyPart">
+						<div id="Modalwrapper" className="Modalwrapper Modallayout">
+							<main id="MainC" className="MainC paddingzero Modallayout">
+								<div className="Contents">
+									<div className="BoxLayout">
+										<div id="CountDown" className="columns CountDown">
+											<div className="CountDownBox">
+												<div id="days" className="CountDownTimer"><p>Days</p><h1>{days}</h1></div>
 											</div>
-											<div className="tg-counterbox">
-												<div id="hours" className="timer_box"><p>hrs</p><h1>{hours}</h1></div>
+											<div className="CountDownBox">
+												<div id="hours" className="CountDownTimer"><p>hrs</p><h1>{hours}</h1></div>
 											</div>
-											<div className="tg-counterbox">
-												<div id="minutes" className="timer_box"><p>Min</p><h1>{minutes}</h1></div>
+											<div className="CountDownBox">
+												<div id="minutes" className="CountDownTimer"><p>Min</p><h1>{minutes}</h1></div>
 											</div>
-											<div className="tg-counterbox">
-												<div id="seconds" className="timer_box"><p>Sec</p><h1>{seconds}</h1></div>
+											<div className="CountDownBox">
+												<div id="seconds" className="CountDownTimer"><p>Sec</p><h1>{seconds}</h1></div>
 											</div>
 										</div>
-										<div className="tg-twocols tg-commingsooncontent">
-											<strong className="tg-logo">
-												<img src="/final/logo.png" alt="image description" />
-											</strong>
-											<div className="tg-bordertitle">
-												<h2>We’re Launching Soon</h2>
-												<h3>Seriously, We’re Working Really Hard!</h3>
-											</div>
-											<div className="tg-description">
-												<p>We are Coming with Time Management tool that can Help Service Provider to Manage Their Customer Digitaly, Which can Bring Your Business in wide area of Network, Creat your Business Page, Register your experties and Increse your business Potential.</p>
-											</div>
+										<div className="columns ModalContents">
+											Modal Content Here
 										</div>
 									</div>
 								</div>
@@ -130,4 +121,4 @@ const ComingSoon = (props) => {
 }
 
 
-export default withRouter(ComingSoon);
+export default withRouter(ComingSoonModal);
