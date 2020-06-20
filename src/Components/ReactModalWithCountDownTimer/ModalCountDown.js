@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 const ComingSoonModal = (props) => {
 
-	const inaugurationDate = new Date('May 23, 2020 21:25:00');
+	const inaugurationDate = new Date('Jun 23, 2020 21:25:00');
 
 	let cuurentDate = new Date();
 

@@ -13,6 +13,7 @@ import ScatterChart from './Components/Charts/ScatterChart';
 import ParentComp from './Components/CommonFunctionality/HigherOrderComponent/ParentForCommonFuncDisp';
 import ParentComponent from './Components/CommonFunctionality/RenderProp/ParentForCommonFuncDisp';
 import ComingSoonModal from './Components/ReactModalWithCountDownTimer/ModalCountDown';
+import ComponentA from './Components/CommonFunctionality/ContextAPI/ComponentA';
 
 const newHistory = createBrowserHistory();
 
@@ -72,6 +73,9 @@ const Routes = () => {
                         <li>
                             <Link to="/ComingSoonModal">ComingSoonModal</Link>
                         </li>
+                        <li>
+                            <Link to="/contexttest">Context Test</Link>
+                        </li>
                     </ul>
 
                 </header>
@@ -92,6 +96,7 @@ const Routes = () => {
                     <Route exact path="/CommomFunc" component={ParentComp}></Route>
                     <Route exact path="/ParentComponent" component={ParentComponent}></Route>
                     <Route exact path="/ComingSoonModal" component={ComingSoonModal}></Route>
+                    <Route exact path="/contexttest" component={ComponentA}></Route>
                     <Route exact path="/lazyComp" render={props => (<Suspense fallback={<div>Loading...</div>}>
                         <LazyLoad {...props} />
                     </Suspense>)}>
