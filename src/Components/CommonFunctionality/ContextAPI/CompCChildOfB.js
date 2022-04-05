@@ -14,7 +14,7 @@ class CompCChildOfB extends React.Component {
         <div>
            <UserConsumer>
                {UserContext => {
-                   return <h1>From CompCChildOfB ....Context Data is : {UserContext}</h1>
+                   return <h1>From CompCChildOfB ....Context Data is : <h4>{UserContext}</h4></h1>
                    //when no Provider are there in parent components  it displayes the default value set in UserContext.js 
                }}
            </UserConsumer>
@@ -22,7 +22,7 @@ class CompCChildOfB extends React.Component {
            <h1>------------------------------------------------------------
                        ---------------------------------</h1>
 
-            <h1>The other way of conssuming UserContext : {this.context}</h1>
+            <h1>The other way of conssuming UserContext : <h4>{this.context}</h4></h1>
         </div>
         );
  }

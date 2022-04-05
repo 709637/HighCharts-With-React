@@ -14,7 +14,7 @@ class CompBChildOfA extends React.Component {
         <div>
             <UserConsumer>                
             {UserContext => {
-                   return <div><h1>From CompBChildOfA ....Context Data is : {UserContext}
+                   return <div><h1>From CompBChildOfA ....Context Data is : <h4>{UserContext}</h4>
                    ...And changing it for its child in this component itself</h1>
                    <h1>------------------------------------------------------------
                        ---------------------------------</h1>
@@ -27,6 +27,12 @@ class CompBChildOfA extends React.Component {
 
                     </CompCChildOfB>
                 </UserProvider>
+
+                {/* <UserConsumer>                
+            {UserContext => {
+                   return <div> {UserContext}</div>
+               }}
+            </UserConsumer> */}
         </div>
         );
  }

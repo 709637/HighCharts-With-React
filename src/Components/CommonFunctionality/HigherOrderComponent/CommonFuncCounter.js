@@ -11,14 +11,28 @@ const UpdatedComponent = (WrappedComponent) => {
         }  
         
         handleContIncrement(){
-           this.setState({
-               count: this.state.count+1
-           })
+            //Control state value here...for any condition to be executed on a perticular value of state
+            // if(this.state.count > 3)
+            // {
+            //     this.setState({
+            //         count: this.state.count-1
+            //     })
+            // }
+            // else{
+            //     this.setState({
+            //         count: this.state.count+1
+            //     })
+            // }
+            this.setState({
+                count: this.state.count+1
+            })
+           
         }
     
         render() {        
             return (
                 <>
+                <div>Count in higher order component is : {this.state.count}</div>
                 <WrappedComponent 
                 count={this.state.count} 
                 handleContIncrement={this.handleContIncrement.bind(this)}

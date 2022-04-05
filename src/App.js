@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
-import Routes from './Router';
+import Routes from './Router'
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 // function initializeReactGA() {
 //   ReactGA.initialize('UA-167420173-1');
@@ -16,13 +17,17 @@ import Routes from './Router';
 
 function App() {
 
+  const queryClient = new QueryClient()
+
 useEffect(()=>{  
   ReactGA.initialize('UA-167420173-1');
   ReactGA.pageview(window.location.pathname + window.location.search);
 },[])
 
   return (
+    <QueryClientProvider client={queryClient}>
     <Routes/>
+    </QueryClientProvider>
   );
 }
 
