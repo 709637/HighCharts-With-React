@@ -3,6 +3,8 @@ import React from 'react';
 import {useParams} from 'react-router';
 import Component1 from './Component1';
 import Pwc from './pwc';
+import AE from './AE';
+import FirstAmerican from './FirstAmerican';
 import {useQuery} from 'react-query';
 
 const testRefetch = () => {
@@ -31,7 +33,9 @@ function Home({match}) {
    {/* <input type="text" ref={(input) => {this.textInput = input}}></input>
    <input type="button" value="Focus the text input" onClick={focusInput}></input> */}
    <h1>hello</h1>
-   <Pwc></Pwc>
+   {/* <Pwc></Pwc> */}
+   {/* <AE></AE> */}
+   <FirstAmerican></FirstAmerican>
 
   
   </div>

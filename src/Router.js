@@ -5,7 +5,7 @@ import PolarChart from './Components/Charts/PolarChart';
 import Users from './Components/User';
 import About from './Components/About';
 import Home from './Components/Home';
-import { BrowserRouter as router, Route, Switch, Link, Router } from "react-router-dom";
+import {  Route, Switch, Link, Router } from "react-router-dom";
 import createBrowserHistory from 'history/createBrowserHistory'
 import Memohook from './Components/Memo';
 import ReactPortalModal from './Components/ReactPortals/ModalWithReactPortal';
