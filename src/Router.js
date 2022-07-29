@@ -15,7 +15,10 @@ import ParentComponent from './Components/CommonFunctionality/RenderProp/ParentF
 import ComingSoonModal from './Components/ReactModalWithCountDownTimer/ModalCountDown';
 import ComponentA from './Components/CommonFunctionality/ContextAPI/ComponentA';
 
+
 const newHistory = createBrowserHistory();
+
+
 
 const LazyLoad = lazy(() => import('./Components/LazyLoadEx'));
 
@@ -24,11 +27,15 @@ const Routes = () => {
         <Router history={newHistory}>
             <div className="App">
                 <header className="App-header">
-                    <ul className="flexDisplay">
-                        <li>
+                    <div className='accordion flexDisplay' id="accordian1">Menu &nbsp;&nbsp;   
+                    <img   name="close" src={require(".\\icon\\move-down.png")} width="30px" height="30px" />
+                    <img name="open" style={{ display : "none"}} src={require(".\\icon\\u-turn-to-left.png")} width="30px" height="30px" />
+                    </div>
+                    <div className="flexDisplay" style={{ display : "none"}}>
+                        <li className='displayinline'>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to={
                                 {
                                     pathname: "/about",
@@ -38,45 +45,52 @@ const Routes = () => {
                                 }
                             }>About</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/user/John/Heyden">Users</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/Memo">Memo</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/polarChart">Polar Chart</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/columnChart">Line Chart</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/barChart">Bar Chart</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/scatterChart">Scatter Chart</Link>
                         </li>
-                        <li>
-                            <Link to="/lazyComp">Lazy Component</Link>
+                        </div>
+
+
+                        <div className='accordion flexDisplay' id="accordian2">Advance &nbsp;&nbsp;   
+                        <img name="close1" src={require(".\\icon\\move-down.png")} width="30px" height="30px" />
+                        <img name="open1" style={{ display : "none"}} src={require(".\\icon\\u-turn-to-left.png")} width="30px" height="30px" />
+                        </div>
+                        <div className="flexDisplay" style={{ display : "none"}}>
+                            
+                        <li className=' displayinline '>
+                            <Link to="/lazyComp">LazyComponent</Link>
                         </li>
-                        </ul>
-                        <ul className="flexDisplay">
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/ReactPortalModal">ReactPortalModal</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/CommomFunc">CommomFuncHigherOrder</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/ParentComponent">CommomFuncRenderProp</Link>
                         </li>
-                        <li>
+                        <li className=' displayinline '>
                             <Link to="/ComingSoonModal">ComingSoonModal</Link>
                         </li>
-                        <li>
-                            <Link to="/contexttest">Context Test</Link>
+                        <li className=' displayinline '>
+                            <Link to="/contexttest">ContextTest</Link>
                         </li>
-                    </ul>
+                    </div>
 
                 </header>
 
@@ -108,5 +122,6 @@ const Routes = () => {
         </Router>
     );
 };
+
 
 export default Routes;
