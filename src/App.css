@@ -14,14 +14,14 @@ ul {
  .displayinline{
    /* display: flex; */
    flex-wrap: wrap;
-   padding: 20px;
+   padding: 10px 5px;
  }
 
  .accordion {
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 5px;
   width: 100%;
   border: none;
   text-align: left;
