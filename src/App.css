@@ -14,7 +14,7 @@ ul {
  .displayinline{
    /* display: flex; */
    flex-wrap: wrap;
-   padding: 10px 5px;
+   padding: 10px 10px;
  }
 
  .accordion {
