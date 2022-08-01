@@ -1,4 +1,14 @@
 # Node.js with React
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(83a7e35f-2fe7-4755-b629-060dfefa3263)'
+    appType: 'webApp'
+    WebAppName: 'LearnReactConcepts'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'LearnReact'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build a Node.js project that uses React.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
