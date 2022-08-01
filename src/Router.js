@@ -28,8 +28,8 @@ const Routes = () => {
             <div className="App">
                 <header className="App-header">
                     <div className='accordion flexDisplay' id="accordian1">Menu &nbsp;&nbsp;   
-                    <img   name="close" src={require(".\\icon\\move-down.png")} width="30px" height="30px" />
-                    <img name="open" style={{ display : "none"}} src={require(".\\icon\\u-turn-to-left.png")} width="30px" height="30px" />
+                    {/* <img   name="close" src={require(".\\icon\\move-down.png")} width="30px" height="30px" />
+                    <img name="open" style={{ display : "none"}} src={require(".\\icon\\u-turn-to-left.png")} width="30px" height="30px" /> */}
                     </div>
                     <div className="flexDisplay" style={{ display : "none"}}>
                         <li className='displayinline'>
@@ -67,8 +67,8 @@ const Routes = () => {
 
 
                         <div className='accordion flexDisplay' id="accordian2">Advance &nbsp;&nbsp;   
-                        <img name="close1" src={require(".\\icon\\move-down.png")} width="30px" height="30px" />
-                        <img name="open1" style={{ display : "none"}} src={require(".\\icon\\u-turn-to-left.png")} width="30px" height="30px" />
+                        {/* <img name="close1" src={require(".\\icon\\move-down.png")} width="30px" height="30px" />
+                        <img name="open1" style={{ display : "none"}} src={require(".\\icon\\u-turn-to-left.png")} width="30px" height="30px" /> */}
                         </div>
                         <div className="flexDisplay" style={{ display : "none"}}>
                             
