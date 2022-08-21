@@ -1,2 +1,0 @@
-(this.webpackJsonphighcharts=this.webpackJsonphighcharts||[]).push([[3],{118:function(t,e,n){"use strict";n.r(e);var a=n(0),h=n.n(a);e.default=function(t){return t.match,h.a.createElement("div",null,h.a.createElement("h2",null,"Child Lazy Component"))}}}]);
-//# sourceMappingURL=3.56d7ca26.chunk.js.map
