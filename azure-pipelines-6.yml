@@ -17,6 +17,11 @@ steps:
     npm run build
   displayName: 'npm install and build'
   condition: 
+- publish: $(build.artifactstagingdirectory)
+  artifact: drop
+
+- download: current
+  artifact: drop
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Free Trial (83a7e35f-2fe7-4755-b629-060dfefa3263)'
