@@ -12,10 +12,10 @@ variables:
   azureSubscription: '7d9d0e23-4fb4-4af9-8765-7d16c02d4b31'
 
   # Web app name
-  webAppName: 'LearnReactConcepts'
+  webAppName: 'Learnreactfeatures'
 
   # Environment name
-  environmentName: 'LearnReactConcepts'
+  environmentName: 'Learnreactfeatures'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -57,7 +57,7 @@ stages:
         deploy:
           steps:
           - task: AzureRmWebAppDeployment@4
-            displayName: 'Azure App Service Deploy: LearnReactConcepts'
+            displayName: 'Azure App Service Deploy: Learnreactfeatures'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webApp
