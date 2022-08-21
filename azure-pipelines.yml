@@ -12,8 +12,8 @@ pool:
 variables:
   directory: highcharts
   stage: development
-  serviceConnection: REACT_AZURE_DEMO
-  appServiceName: reactazuredemo
+  serviceConnection: highcharts
+  appServiceName: learnreactconcepts
  
 steps:
 - task: NodeTool@0
