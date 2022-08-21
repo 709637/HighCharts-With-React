@@ -12,7 +12,7 @@ pool:
 variables:
   directory: highcharts
   stage: development
-  serviceConnection: highcharts
+  serviceConnection: learnreactconcepts
   appServiceName: learnreactconcepts
  
 steps:
