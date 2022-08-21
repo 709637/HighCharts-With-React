@@ -60,7 +60,7 @@ stages:
             displayName: 'Azure App Service Deploy: Learnreactfeatures'
             inputs:
               azureSubscription: $(azureSubscription)
-              appType: webApp
+              appType: webAppLinux
               WebAppName: $(webAppName)
               packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               RuntimeStack: 'NODE|10.10'
