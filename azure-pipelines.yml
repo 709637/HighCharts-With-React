@@ -1,37 +1,62 @@
 # Node.js with React
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(83a7e35f-2fe7-4755-b629-060dfefa3263)'
-    appType: 'webApp'
-    WebAppName: 'LearnReactConcepts'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'LearnReact'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build a Node.js project that uses React.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
+ 
 trigger:
 - master
-
+ 
 pool:
-  vmImage: ubuntu-latest
-
+  vmImage: 'windows-latest'
+# Set variables
+variables:
+  directory: react-azure-demo
+  stage: development
+  serviceConnection: REACT_AZURE_DEMO
+  appServiceName: reactazuredemo
+ 
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    appType: 'webApp'
-    WebAppName: 
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-- script: |
+ 
+- script: 
     npm install
-    npm run build
-  displayName: 'npm install and build'
+  displayName: 'npm install'
+  workingDirectory: $(directory)
+ 
+- script: 
+    set "REACT_APP_STAGE=$(stage)" && npm run build
+  displayName: 'npm build'
+  workingDirectory: $(directory)
+ 
+- task: CopyFiles@2
+  displayName: 'Copy files'
+  inputs:
+    sourceFolder: '$(directory)/build' 
+    Contents: '**/*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    cleanTargetFolder: true
+ 
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    replaceExistingArchive: true
+ 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifacts'
+  inputs: 
+    pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+ 
+- task: AzureWebApp@1
+  displayName: 'Deploy to App Service'
+  inputs:
+    azureSubscription: '$(serviceConnection)'
+    appName: '$(appServiceName)'
+    appType: 'webApp'
+    package: '$(System.ArtifactsDirectory)/$(Build.BuildId).zip'
