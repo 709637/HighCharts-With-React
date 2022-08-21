@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 # Set variables
 variables:
-  directory: highcharts
+  directory: HighCharts-With-React
   stage: development
   serviceConnection: '7d9d0e23-4fb4-4af9-8765-7d16c02d4b31'
   appServiceName: learnreactconcepts
