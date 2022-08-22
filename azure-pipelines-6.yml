@@ -26,7 +26,7 @@ steps:
   inputs:
     azureSubscription: 'Free Trial (83a7e35f-2fe7-4755-b629-060dfefa3263)'
     appType: 'webApp'
-    appName: 'ReactBasics'
+    appName: 'learnreactconcepts'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
 # Build a Node.js project that uses React.
