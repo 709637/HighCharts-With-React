@@ -20,6 +20,8 @@ steps:
 - publish: $(build.artifactstagingdirectory)
   artifact: drop
 
+- task: PublishBuildArtifacts@1
+
 - download: current
   artifact: drop
 - task: AzureWebApp@1
@@ -32,4 +34,3 @@ steps:
 # Build a Node.js project that uses React.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-- task: PublishBuildArtifacts@1
