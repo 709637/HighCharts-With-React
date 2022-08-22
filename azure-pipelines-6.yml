@@ -1,72 +1,35 @@
-
-# Node.js React Web App to Linux on Azure
-# Build a Node.js React app and deploy it to Azure as a Linux web app.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# Node.js with React
 
 trigger:
 - master
 
-variables:
+pool:
+  vmImage: ubuntu-latest
 
-  # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '7d9d0e23-4fb4-4af9-8765-7d16c02d4b31'
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
-  # Web app name
-  webAppName: 'learnreactconcepts'
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+  condition: 
+- publish: $(build.artifactstagingdirectory)
+  artifact: drop
 
-  # Environment name
-  environmentName: 'learnreactconcepts'
-
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
-stages:
-- stage: Build
-  displayName: Build stage
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-
-    steps:
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
-      inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        replaceExistingArchive: true
-
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
-
-- stage: Deploy
-  displayName: Deploy stage
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
-  - deployment: Deploy
-    displayName: Deploy
-    environment: $(environmentName)
-    pool:
-      vmImage: $(vmImageName)
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - task: AzureRmWebAppDeployment@4
-            displayName: 'Azure App Service Deploy: learnreactconcepts'
-            inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
-              WebAppName: $(webAppName)
-              packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-              RuntimeStack: 'NODE|10.10'
-              StartupCommand: 'npm run start'
-              ScriptType: 'Inline Script'
-              InlineScript: |
-                npm install
-                npm run build --if-present 
+- download: current
+  artifact: drop
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial (83a7e35f-2fe7-4755-b629-060dfefa3263)'
+    appType: 'webApp'
+    appName: 'ReactBasics'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+- task: PublishBuildArtifacts@1
