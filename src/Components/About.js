@@ -12,7 +12,7 @@ function goback(){
 
   return (
   <div>
-   <h1>About</h1>
+   <h1>About Us</h1>
   <div>Current Location : {location.pathname}</div>
   <div>Data Passes from Other component: {location.state.user}</div>
    <button onClick={goback}>GO Back</button>
