@@ -21,28 +21,28 @@ for (i = 0; i < acc.length; i++) {
     if (panel.style.display === "flex") {
       panel.style.display = "none";
       console.log(i,acc[i],typeof event.currentTarget != "undefined")
-        if (i.srcElement.id == "accordian1"){
-            open[0].style.display = "none";
-            close[0].style.display = "flex";
-          }
-          else{
-            open1[0].style.display = "none";
-            close1[0].style.display = "flex";
-          }
+        // if (i.srcElement.id == "accordian1"){
+        //     open[0].style.display = "none";
+        //     close[0].style.display = "flex";
+        //   }
+        //   else{
+        //     open1[0].style.display = "none";
+        //     close1[0].style.display = "flex";
+        //   }
       
       
       
       
     } else {
       panel.style.display = "flex";
-        if (i.srcElement.id == "accordian1"){
-            close[0].style.display = "none";
-            open[0].style.display = "flex";
-          }
-          else{
-            open1[0].style.display = "flex";
-            close1[0].style.display = "none";
-          }
+        // if (i.srcElement.id == "accordian1"){
+        //     close[0].style.display = "none";
+        //     open[0].style.display = "flex";
+        //   }
+        //   else{
+        //     open1[0].style.display = "flex";
+        //     close1[0].style.display = "none";
+        //   }
       
       
       

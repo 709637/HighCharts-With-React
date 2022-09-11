@@ -1,0 +1,83 @@
+export const sessionData = [
+    {
+        format: 'nemesis_lognode',
+        version: 'v0.0.1',
+        session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+        log_nodes: [
+            {
+                category: 'Have 1 Childs Child',
+                start_date: '2022-06-02 20:40:52.649',
+                end_date: '2022-06-02 20:40:52.863',
+                duration: 214.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: '8a0ed10a-82f2-3e76-841f-610cd1dc9b1c',
+                self: '0755adaf-1ed5-3a65-ac37-84d0a59833f2',
+                result: 'SUCCESS',
+            },
+
+            {
+                category: 'Have 2 Child',
+                start_date: '2022-06-02 20:40:52.648',
+                end_date: '2022-06-02 20:40:52.884',
+                duration: 236.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: null,
+                self: '75055c9d-4744-3c4d-8be7-ad4c213fd06d',
+                result: 'SUCCESS',
+            },
+            {
+                category: 'super child',
+                start_date: '2022-06-02 20:40:52.226',
+                end_date: '2022-06-02 20:40:53.718',
+                duration: 1492.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: '0755adaf-1ed5-3a65-ac37-84d0a59833f2',
+                self: '8e2fcbc3-51b4-35a7-a0e2-7461e9335439',
+                result: 'SUCCESS',
+            },
+            {
+                category: 'super childs child',
+                start_date: '2022-06-02 20:40:52.226',
+                end_date: '2022-06-02 20:40:53.718',
+                duration: 1492.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: '8e2fcbc3-51b4-35a7-a0e2-7461e9335439',
+                self: '8e2fcbc3-51b4-35a7-a0e2-7461e9335456',
+                result: 'SUCCESS',
+            },
+            {
+                category: 'have 1 child',
+                start_date: '2022-06-02 20:40:52.648',
+                end_date: '2022-06-02 20:40:52.884',
+                duration: 236.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: null,
+                self: '8a0ed10a-82f2-3e76-841f-610cd1dc9b1c',
+                result: 'SUCCESS',
+            },
+            {
+                category: 'Have 2 child 1',
+                start_date: '2022-06-02 20:40:52.648',
+                end_date: '2022-06-02 20:40:52.884',
+                duration: 236.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: '75055c9d-4744-3c4d-8be7-ad4c213fd06d',
+                self: '8a0ed10a-82f2-3e76-841f-610cd1dc9b1d',
+                result: 'SUCCESS',
+            },
+            {
+                category: 'Have 2 child 2',
+                start_date: '2022-06-02 20:40:52.648',
+                end_date: '2022-06-02 20:40:52.884',
+                duration: 236.0,
+                session: '8e2fcbc3-51b4-35a7-a0e2-7461e9335438',
+                parent: '75055c9d-4744-3c4d-8be7-ad4c213fd06d',
+                self: '8a0ed10a-82f2-3e76-841f-610cd1dc9b1e',
+                result: 'SUCCESS',
+            },
+        ],
+    },
+
+];
+
+export default sessionData;

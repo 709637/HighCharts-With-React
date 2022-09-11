@@ -14,6 +14,7 @@ import ParentComp from './Components/CommonFunctionality/HigherOrderComponent/Pa
 import ParentComponent from './Components/CommonFunctionality/RenderProp/ParentForCommonFuncDisp';
 import ComingSoonModal from './Components/ReactModalWithCountDownTimer/ModalCountDown';
 import ComponentA from './Components/CommonFunctionality/ContextAPI/ComponentA';
+import DrillDropDown from './Components/DrillDropDown';
 
 
 const newHistory = createBrowserHistory();
@@ -90,6 +91,9 @@ const Routes = () => {
                         <li className=' displayinline '>
                             <Link to="/contexttest">ContextTest</Link>
                         </li>
+                        <li className=' displayinline '>
+                            <Link to="/DrillDropDown">DrillDropDown</Link>
+                        </li>
                     </div>
 
                 </header>
@@ -110,7 +114,8 @@ const Routes = () => {
                     <Route exact path="/CommomFunc" component={ParentComp}></Route>
                     <Route exact path="/ParentComponent" component={ParentComponent}></Route>
                     <Route exact path="/ComingSoonModal" component={ComingSoonModal}></Route>
-                    <Route exact path="/contexttest" component={ComponentA}></Route>
+                    <Route exact path="/contexttest" component={ComponentA}></Route>                    
+                    <Route exact path="/DrillDropDown" component={DrillDropDown}></Route>
                     <Route exact path="/lazyComp" render={props => (<Suspense fallback={<div>Loading...</div>}>
                         <LazyLoad {...props} />
                     </Suspense>)}>
